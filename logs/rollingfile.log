@@ -1,0 +1,2 @@
+[INFO ] 2020-05-28 15:57:44.799 [HikariPool-1 connection closer] audit - 10. Connection.close() returned 
+[INFO ] 2020-05-28 15:57:44.801 [SpringContextShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.security.mapper.UserMapper">
+
+    <select id="readUser"  parameterType="String" resultType="com.bit.security.domain.UserVO">
+		SELECT * FROM user
+		WHERE id= #{id}
+	</select>
+
+	<select id="readAuth"  parameterType="String" resultType="String">
+		SELECT roleType
+		FROM user a, auth b
+		WHERE a.authCode = b.authCode and id=#{id}
+	</select>
+</mapper>

@@ -1,0 +1,54 @@
+spring:
+  #mybatis
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://localhost:3306/test?serverTimezone=UTC&&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: 1234
+
+  #jsp
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+#  #thymeleaf
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    cache: false
+#    view-names: th/*
+
+  # jsp파일 reload할때마다 재부팅해야되서 해당설정 추가
+  server:
+    servlet:
+      jsp:
+        init-parameters:
+          development: true
+
+  #oauth-google
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 932323453386-c35qir2hsql97gji2b80b34btdja99jl.apps.googleusercontent.com
+            client-secret: _GSWMfIo02A1e-tSkgVidzoW
+            scope: profile, email
+
+# server port
+server:
+  port: 8080
+
+# mybatis 설정.
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+
+#logging:
+#  config: classpath:log4j2.yml
+
+logging:
+  level:
+    root: INFO
+
+
